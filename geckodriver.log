@@ -1,0 +1,6 @@
+1598027341291	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.PqRCipigVK4V"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598027343924	Marionette	INFO	Listening on port 35123
+1598027343999	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598027344030	Marionette	INFO	Stopped listening on port 35123
+console.warn: services.settings: main/whats-new-panel sync interrupted by shutdown

@@ -1,0 +1,6 @@
+*.log
+dbsqlite3*
+*.swp
+*.pyc
+virtual-environment/
+__pycache__
