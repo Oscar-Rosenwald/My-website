@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>{{ post.title }}</h2>
+{% if post.published_date %}
+<p>{{ post.published_date }}</p>
+{% endif %}
+<p>{{ post.text | linebreak }}</p>
+{% endblock %}
