@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>My Blogs</h2>
+<div class="sub-header">
+  <h2>My Blogs</h2>
+  {% if user.is_authenticated %}
+	<a href="{% url 'new_post' %}" class="top-menu"><button>New</button> </a>
+  {% endif %}
+</div>
 {% for post in posts %}
 <h3><a href="{% url 'posts' pk=post.pk %}">{{ post.title }}</a></h3>
 {% endfor %}

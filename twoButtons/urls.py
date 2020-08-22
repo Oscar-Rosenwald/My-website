@@ -25,5 +25,6 @@ urlpatterns = [
     url('cv', views.cv_view, name="CV"),
     path('blog', views.blog_view, name="blogs"),
     path('blog/<int:pk>/', views.post_view, name="posts"),
-    # url('', include('home.urls')),
+    path('blog/new/', views.post_new, name="new_post"),
+    path('blog/<int:pk>/edit/', views.post_edit, name="edit_post"),
 ]
