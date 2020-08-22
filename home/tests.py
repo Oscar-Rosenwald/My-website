@@ -18,7 +18,7 @@ class HomePageTest(TestCase):
         self.assertEqual(found.func, cv_view)
 
     def test_blog_url_resolves_correctly(self):
-        found = resolve('/blog/')
+        found = resolve('/blog')
         self.assertEqual(found.func, blog_view)
 
     def test_home_page_uses_correct_template(self):
@@ -41,12 +41,22 @@ class PostModelTest(TestCase):
 
     def test_database_has_posts(self):
         post = Post()
-        post.title = "Ahoj"
-        post.text = "AaaaaaHooooJJJJJ"
+        post.title = "Ahoy"
+        post.text = "AaaaaaHooooYYYYY"
         post.author = self.user
         post.save()
         self.assertEqual(Post.objects.count(), 1)
 
 class BlogTest(TestCase):
-    def test_blog_is_clickable(self):
-        response = resolve('/blogs/1')
+    def setUp(self):
+        self.user = User.objects.create_user("Me", "me@me.com", "memememe")
+
+    # def test_blog_is_clickable(self):
+    #     post = Post()
+    #     post.title = "Ahoj"
+    #     post.text = "AaaaaaHooooJJJJJ"
+    #     post.author = self.user
+    #     post.save()
+        
+    #     response = resolve('/blogs/1')
+    #     self.assertTemplateUsed(response, 'post.html')

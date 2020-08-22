@@ -25,8 +25,17 @@ class FunctionalTests(unittest.TestCase):
         time.sleep(1)
         self.assertIn('Blogs', self.browser.find_element_by_tag_name('h2').text)
 
+        posts = self.browser.find_elements_by_tag_name('a')
+        self.assertTrue(len(posts) > 0)
+        posts[1].click()
+        time.sleep(1)
         self.assertEqual(len(self.browser.find_elements_by_tag_name('h3')), 1)
-        # self.assertIn('Last Year - A Look Back', self.browser.find_elements_by_tag_name('h3')[0].text)
+
+        # Check a back button to blog
+        button = self.browser.find_element_by_tag_name('button')
+        button.click()
+        time.sleep(1)
+        self.assertIn('Blogs', self.browser.find_element_by_tag_name('h2').text)
         
         # Check for the home button
         button = self.browser.find_element_by_tag_name('a')

@@ -2,7 +2,7 @@
 
 {% block content %}
 <h2>My Blogs</h2>
-{% for post in posts1 %}
-<h3>{{ post.title }}</h3>
+{% for post in posts %}
+<h3><a href="{% url 'posts' pk=post.pk %}">{{ post.title }}</a></h3>
 {% endfor %}
 {% endblock %}

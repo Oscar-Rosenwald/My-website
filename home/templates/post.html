@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<button id="blog-button" onclick="location.href='../../blog'">Back to Blog</button>
 <h3>{{ post.title }}</h2>
 {% if post.published_date %}
 <p>{{ post.published_date }}</p>
 {% endif %}
-<p>{{ post.text | linebreak }}</p>
+<p>{{ post.text | linebreaksbr }}</p>
 {% endblock %}

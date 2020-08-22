@@ -11,6 +11,6 @@ def blog_view(request):
     posts = Post.objects.all()
     return render(request, 'blogs.html', {'posts': posts})
 
-# def post_view(request, pk):
-#     post = get_object_or_404(Post, pk=pk)
-#     return render(request, 'post.html', {'post': post})
+def post_view(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'post.html', {'post': post})
