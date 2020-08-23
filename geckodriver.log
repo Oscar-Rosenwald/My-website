@@ -256,3 +256,23 @@ console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Err
 1598102810266	Marionette	INFO	Listening on port 42989
 1598102810294	Marionette	WARN	TLS certificate errors will be ignored for this session
 1598102815899	Marionette	INFO	Stopped listening on port 42989
+1598173741772	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.7lmuwGTdcGTF"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598173744263	Marionette	INFO	Listening on port 45737
+1598173744280	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598173744391	Marionette	INFO	Stopped listening on port 45737
+1598173746847	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.a1DabuAVsUbs"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598173748910	Marionette	INFO	Listening on port 39097
+1598173748954	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598173748984	Marionette	INFO	Stopped listening on port 39097
+1598173777181	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.dYoiB9pNxvGo"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598173779313	Marionette	INFO	Listening on port 36639
+1598173779386	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598173784971	Marionette	INFO	Stopped listening on port 36639
+1598173786412	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.qOGAXWy06gM3"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1598173788516	Marionette	INFO	Listening on port 44257
+1598173788523	Marionette	WARN	TLS certificate errors will be ignored for this session
+1598173788561	Marionette	INFO	Stopped listening on port 44257

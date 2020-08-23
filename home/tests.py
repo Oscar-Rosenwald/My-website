@@ -8,6 +8,14 @@ from home.views import two_buttons
 from home.views import cv_view
 from home.views import blog_view
 
+class CVTest(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create_user("Me", "me@me.com", "memememe")
+
+    def tearDown(self):
+        
+
 class HomePageTest(TestCase):
     def test_root_url_resolves_to_home_page_view(self):
         found = resolve('/')
@@ -46,17 +54,3 @@ class PostModelTest(TestCase):
         post.author = self.user
         post.save()
         self.assertEqual(Post.objects.count(), 1)
-
-class BlogTest(TestCase):
-    def setUp(self):
-        self.user = User.objects.create_user("Me", "me@me.com", "memememe")
-
-    # def test_blog_is_clickable(self):
-    #     post = Post()
-    #     post.title = "Ahoj"
-    #     post.text = "AaaaaaHooooJJJJJ"
-    #     post.author = self.user
-    #     post.save()
-        
-    #     response = resolve('/blogs/1')
-    #     self.assertTemplateUsed(response, 'post.html')

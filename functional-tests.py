@@ -49,8 +49,11 @@ class FunctionalTests(unittest.TestCase):
         time.sleep(1)
         self.assertIn('My CV', self.browser.find_element_by_tag_name('h2').text)
 
-        self.fail('Failing on purpose!') 
+    def test_CV(self):
 
+        # 
+
+        self.fail('Failing on purpose!') 
 
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
