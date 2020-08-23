@@ -18,6 +18,8 @@ from home.models import PersonalInterests
 
 from home.models import Reference
 
+from home.models import Others
+
 def two_buttons(request):
     return render(request, 'home.html')
 
@@ -29,7 +31,8 @@ def cv_view(request):
     email = person.me.email
     phone_number = person.phone_number
     address = person.address
-    others = person.personal_others
+
+    others = Others.objects.filter(person=person)
 
     # Education
     education = Education.objects.order_by('-end_date')
@@ -46,7 +49,7 @@ def cv_view(request):
     # References
     refs = Reference.objects.all()
 
-    return render(request, 'CVs.html', {'tech_skills': tech, 'work_experience': exp, 'personal_interests': interests, 'references': refs, 'education': education, 'name': name, 'email': email, 'address': address, 'phone_number': phone_number})
+    return render(request, 'CVs.html', {'personal_others': others, 'tech_skills': tech, 'work_experience': exp, 'personal_interests': interests, 'references': refs, 'education': education, 'name': name, 'email': email, 'address': address, 'phone_number': phone_number})
 
 def blog_view(request):
     posts = Post.objects.all()

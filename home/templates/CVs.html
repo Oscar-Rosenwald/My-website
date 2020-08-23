@@ -24,10 +24,7 @@
   <div personal="personal" name="other">
 	{% for entry in personal_others %}
 	<p>
-	  {{ entry }}
-	</p>
-	<p>
-	  {{ entry.text }}
+	  {{ entry }}: {{ entry.body }}
 	</p>
 	{% endfor %}
   </div>

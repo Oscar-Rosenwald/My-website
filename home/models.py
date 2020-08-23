@@ -72,7 +72,7 @@ class Person(models.Model):
     me = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=11)
     address = models.TextField()
-    personal_others = ListTextField(base_field = CharField(max_length=300))
+    # personal_others = ListTextField(base_field = CharField(max_length=300))
 
     def add_to_others(self, value):
         self.personal_others.append(value)
@@ -80,3 +80,11 @@ class Person(models.Model):
 
     def __str__(self):
         return self.me.username
+
+class Others(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    body = models.TextField()
+
+    def __str__(self):
+        return self.name
