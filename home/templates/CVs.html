@@ -35,7 +35,7 @@
 <div class="education">
   <h3>Education</h3>
   {% if user.is_authenticated %}
-  <a href="{% url 'new_education' %}" class="education-add"><button>Add Education</button></a>
+  <a href="{% url 'new_education' %}" class="entry-add"><button>Add</button></a>
   {% endif %}
   <div class="education-entries">
 	{% for entry in education %}
@@ -51,6 +51,9 @@
 {% if tech_skills %}
 <div class="tech-skills">
   <h3>Technical Skills</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_tech_skill' %}" class="entry-add"><button>Add</button></a>
+  {% endif %}
   {% for entry in tech_skills %}
   <p>{{ entry.skill }}</p>
   {% endfor %}
@@ -61,6 +64,9 @@
 {% if work_experience %}
 <div class="work">
   <h3>Work Experience</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_work_experience' %}" class="entry-add"><button>Add</button></a>
+  {% endif %}
   {% for entry in work_experience %}
   <p class="entry-date">{{ entry.start_date }} - {{ entry.end_date}}:</p>
   <p class="entry-body">{{ entry.role }}</p>
@@ -73,6 +79,9 @@
 {% if projects %}
 <div class="projects">
   <h3>Projects</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_project' %}" class="entry-add"><button>Add</button></a>
+  {% endif %}
   {% for project in projects %}
   <p class="project-name">{{ project.name }}</p>
   <p class="project-body">{{ project.description }}</p>
@@ -85,6 +94,9 @@
 {% if personal_interests %}
 <div class="personal-interests">
   <h3>Personal Interests</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_personal_interest' %}" class="entry-add"><button>Add</button></a>
+  {% endif %}
   {% for interest in personal_interests %}
   <p>{{ interest.interest }}</p>
   {% endfor %}
@@ -95,6 +107,9 @@
 {% if references %}
 <div class="references">
   <h3>References</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_reference' %}" class="entry-add"><button>Add</button></a>
+  {% endif %}
   {% for reference in references %}
   <p class="reference-name">{{ reference.name }}</p>
   <p class="reference-who">{{ reference.who }}</p>

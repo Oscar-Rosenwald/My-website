@@ -25,13 +25,30 @@ urlpatterns = [
     url('cv', views.cv_view, name="CV"),
     path('blog', views.blog_view, name="blogs"),
     path('blog/<int:pk>/', views.post_view, name="posts"),
+
+    # New
     path('blog/new/', views.post_new, name="new_post"),
-    path('blog/<int:pk>/edit/', views.post_edit, name="edit_post"),
     path('education/new/', views.education_new, name="new_education"),
     path('reference/new/', views.reference_new, name="new_reference"),
-    path('personal-interests/new/', views.personal_interests_new, name="new_personal_interest"),
-    path('projects/new', views.project_new, name='new_project'),
+    path('personal-interest/new/', views.personal_interests_new, name="new_personal_interest"),
+    path('project/new', views.project_new, name='new_project'),
     path('work-experience/new', views.work_experience_new, name="new_work_experience"),
     path('technical-skill/new', views.tech_skill_new, name="new_tech_skill"),
     path('others/new', views.others_new, name='new_others'),
+
+    # Edits
+    path('blog/<int:pk>/edit/', views.post_edit, name="edit_post"),
+    path('education/<int:pk>/edit', views.education_edit, name="edit_education"),
+    path('reference/<int:pk>/edit', views.reference_edit, name='edit_reference'),
+    path('personal-interest/<int:pk>/edit/', views.personal_interests_edit, name='edit_personal_interest'),
+    path('project/<int:pk>/edit/', views.project_edit, name='edit_project'),
+    path('work-experience/<int:pk>/edit', views.work_experience_edit, name='edit_work_experience'),
+    path('technical-skill/<int:pk>/edit', views.tech_skill_edit, name="edit_tech_skill"),
+    path('others/<int:pk>/edit', views.others_edit, name="edit_others"),
+
+    # # Edits of Personal Info
+    # path('name/edit', views.name_edit, name='edit_name'),
+    # path('email/edit', views.email_edit, name='edit_email'),
+    # path('phone/edit', views.phone_edit, name='edit_phone_number'),
+    # path('address/edit', views.address_edit, name='edit_address'),
 ]
