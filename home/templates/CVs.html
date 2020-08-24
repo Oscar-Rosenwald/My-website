@@ -34,6 +34,9 @@
 {% if education %}
 <div class="education">
   <h3>Education</h3>
+  {% if user.is_authenticated %}
+  <a href="{% url 'new_education' %}" class="education-add"><button>Add Education</button></a>
+  {% endif %}
   <div class="education-entries">
 	{% for entry in education %}
 	<p class="entry-time">{{ entry.start_date }} - {{ entry.end_date }}:</p>
@@ -96,8 +99,9 @@
   <p class="reference-name">{{ reference.name }}</p>
   <p class="reference-who">{{ reference.who }}</p>
   <p class="reference-email">{{ reference.email}}</p>
-  {% if reference.text }}
+  {% if reference.text %}
   <p class="reference-text">{{ reference.text }}</p>
+  {% endif %}
   {% endfor %}
 </div>
 {% endif %}

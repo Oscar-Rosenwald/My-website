@@ -51,8 +51,8 @@ class Post(models.Model):
         return self.title
 
 class Education(models.Model):
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField(default=timezone.now)
+    start_date = models.DateField()
+    end_date = models.DateField()#default=DateField.auto_now)
     course = models.TextField()
     school = models.TextField()
 
@@ -60,8 +60,8 @@ class Education(models.Model):
         return self.course
 
 class WorkExperience(models.Model):
-    start_date = models.DateTimeField()
-    end_date = models.DateTimeField(default=timezone.now)
+    start_date = models.DateField()
+    end_date = models.DateField()#default=DateField.auto_now)
     role = models.TextField()
     where = models.TextField()
 

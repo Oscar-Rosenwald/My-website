@@ -27,4 +27,11 @@ urlpatterns = [
     path('blog/<int:pk>/', views.post_view, name="posts"),
     path('blog/new/', views.post_new, name="new_post"),
     path('blog/<int:pk>/edit/', views.post_edit, name="edit_post"),
+    path('education/new/', views.education_new, name="new_education"),
+    path('reference/new/', views.reference_new, name="new_reference"),
+    path('personal-interests/new/', views.personal_interests_new, name="new_personal_interest"),
+    path('projects/new', views.project_new, name='new_project'),
+    path('work-experience/new', views.work_experience_new, name="new_work_experience"),
+    path('technical-skill/new', views.tech_skill_new, name="new_tech_skill"),
+    path('others/new', views.others_new, name='new_others'),
 ]

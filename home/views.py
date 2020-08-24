@@ -3,21 +3,15 @@ from django.utils import timezone
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 
+from home.forms import *
+
 from home.models import Post
-from home.forms import PostForm
-
 from home.models import Person
-
 from home.models import Education
-
 from home.models import TechSkill
-
 from home.models import WorkExperience
-
 from home.models import PersonalInterests
-
 from home.models import Reference
-
 from home.models import Others
 
 def two_buttons(request):
@@ -49,7 +43,7 @@ def cv_view(request):
     # References
     refs = Reference.objects.all()
 
-    return render(request, 'CVs.html', {'personal_others': others, 'tech_skills': tech, 'work_experience': exp, 'personal_interests': interests, 'references': refs, 'education': education, 'name': name, 'email': email, 'address': address, 'phone_number': phone_number})
+    return render(request, 'CVs.html', {'personal_others': others, 'tech_skills': tech, 'personal_interests': interests, 'references': refs, 'name': name, 'email': email, 'address': address, 'phone_number': phone_number, 'education': education, 'work_experience': exp})
 
 def blog_view(request):
     posts = Post.objects.all()
@@ -86,16 +80,80 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'edit.html', {'form': form})
 
-# def post_edit(request, pk):
-#     post = get_object_or_404(Post, pk=pk)
-#     if request.method == 'POST':
-#         form = PostForm(request.POST, pk=post.pk)
-#         if form.is_valid():
-#             post = form.save(commit=False)
-#             post.author = request.user
-#             post.published_date = timezone.now()
-#             post.save()
-#             return redirect('post_detail', pk=post.pk)
-#     else:
-#         form = PostForm(instance=post)
-#     return render(request, 'blog/post_edit.html', {'form': form})
+def education_new(request):
+    if request.method == "POST":
+        form = EducationForm(request.POST)
+        if form.is_valid():
+            edu = form.save(commit=False)
+            edu.save()
+            return redirect('CV')
+    else:
+        form = EducationForm()
+    return render(request, 'education_edit.html', {'name': 'Education', 'form': form})
+
+def reference_new(request):
+    if request.method == 'POST':
+        form = ReferenceForm(request.POST)
+        if form.is_valid():
+            reference = form.save(commit=False)
+            reference.save()
+            return redirect('CV')
+    else:
+        form = ReferenceForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Reference'})
+
+def personal_interests_new(request):
+    if request.method == 'POST':
+        form = PersonalInterestsForm(request.POST)
+        if form.is_valid():
+            thing = form.save(commit=False)
+            thing.save()
+            return redirect('CV')
+    else:
+        form = PersonalInterestsForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Personal Interest'})
+
+def project_new(request):
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            thing = form.save(commit=False)
+            thing.save()
+            return redirect('CV')
+    else:
+        form = ProjectForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Project'})
+
+def work_experience_new(request):
+    if request.method == 'POST':
+        form = WorkExperienceForm(request.POST)
+        if form.is_valid():
+            thing = form.save(commit=False)
+            thing.save()
+            return redirect('CV')
+    else:
+        form = WorkExperienceForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Work Experience'})
+
+def tech_skill_new(request):
+    if request.method == 'POST':
+        form = TechSkillForm(request.POST)
+        if form.is_valid():
+            thing = form.save(commit=False)
+            thing.save()
+            return redirect('CV')
+    else:
+        form = TechSkillForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Technical Skill'})
+
+def others_new(request):
+    if request.method == 'POST':
+        form = OthersForm(request.POST)
+        if form.is_valid():
+            thing = form.save(commit=False)
+            thing.person = Person.objects.first()
+            thing.save()
+            return redirect('CV')
+    else:
+        form = OthersForm()
+    return render(request, 'education_edit.html', {'form': form, 'name': 'Personal Other'})
