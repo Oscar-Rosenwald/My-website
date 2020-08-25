@@ -4,10 +4,12 @@
 <div class="sub-header">
   <h2>My Blogs</h2>
   {% if user.is_authenticated %}
-	<a href="{% url 'new_post' %}" class="top-menu"><button>New</button> </a>
+  <div class="back-button">
+	<a href="{% url 'new_post' %}"><button class="top-menu">New</button> </a>
+  </div>
   {% endif %}
 </div>
 {% for post in posts %}
-<h3><a href="{% url 'posts' pk=post.pk %}">{{ post.title }}</a></h3>
+<h3 class="post-title"><a href="{% url 'posts' pk=post.pk %}">{{ post.title }}</a></h3>
 {% endfor %}
 {% endblock %}

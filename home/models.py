@@ -61,7 +61,7 @@ class Education(models.Model):
 
 class WorkExperience(models.Model):
     start_date = models.DateField()
-    end_date = models.DateField()#default=DateField.auto_now)
+    end_date = models.DateField()
     role = models.TextField()
     where = models.TextField()
 
@@ -72,7 +72,6 @@ class Person(models.Model):
     me = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=11)
     address = models.TextField()
-    # personal_others = ListTextField(base_field = CharField(max_length=300))
 
     def add_to_others(self, value):
         self.personal_others.append(value)

@@ -48,3 +48,9 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ('name', 'description', 'link')
+
+class PersonForm(forms.ModelForm):
+
+    class Meta:
+        model = Person
+        fields = ('phone_number', 'address')

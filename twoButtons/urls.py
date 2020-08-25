@@ -47,8 +47,5 @@ urlpatterns = [
     path('others/<int:pk>/edit', views.others_edit, name="edit_others"),
 
     # # Edits of Personal Info
-    # path('name/edit', views.name_edit, name='edit_name'),
-    # path('email/edit', views.email_edit, name='edit_email'),
-    # path('phone/edit', views.phone_edit, name='edit_phone_number'),
-    # path('address/edit', views.address_edit, name='edit_address'),
+    path('person/edit', views.person_edit, name='edit_person'),
 ]
