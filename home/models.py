@@ -3,8 +3,6 @@ from django.db import models
 from django.db.models import CharField
 from django.utils import timezone
 from django.contrib.auth.models import User
-from django_mysql.models import ListTextField
-# from  datetime import datetime.datetime
 import ast, datetime
 
 class Project(models.Model):
