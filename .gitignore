@@ -4,3 +4,4 @@ dbsqlite3*
 *.pyc
 virtual-environment/
 __pycache__
+db.sqlite3
