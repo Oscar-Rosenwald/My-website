@@ -79,7 +79,7 @@
 	  {% endif %}
 	  {% for entry in tech_skills %}
 	  <p>
-		{{ entry.skill }}
+		{{ entry.skill | linebreaksbr }}
 		{% if user.is_authenticated %}
 		<a href="{% url 'edit_tech_skill' pk=entry.pk %}"><button>Edit</button></a>
 		{% endif %}
@@ -105,7 +105,7 @@
 		{% endif %}
 	  </p>
 	  <div class="indented">
-		<p class="entry-body">{{ entry.role }}</p>
+		<p class="entry-body">{{ entry.role |linebreaksbr }}</p>
 		<p class="entry-where">{{ entry.where }}</p>
 	  </div>
 	  {% endfor %}
@@ -127,7 +127,7 @@
 		{% endif %}
 	  </p>
 	  <div class="indented">
-		<p class="project-body">{{ project.description }}</p>
+		<p class="project-body">{{ project.description |linebreaksbr }}</p>
 		<p class="project-link">{{ project.link }}</p>
 	  </div>
 	  {% endfor %}
