@@ -1,0 +1,133 @@
+/* Header */
+.page-header {
+	background-color: purple;
+	margin-top: 0;
+	padding: 20px 0px 20px;
+}
+
+.page-header h1 {
+	font-size: 60px;
+	text-align: center;
+}
+
+h1 a {
+	color: orange;
+}
+
+h1 a:hover {
+	color: black;
+}
+
+/* Content */
+.page-content {
+	background-color: #95B9C7;
+	margin-top: 0;
+	padding: 10px 0 10px 0px;
+}
+
+.page-content h2 {
+	color: #E42217;
+	text-align: center;
+	font-size: 40px;
+}
+
+.pick-button {
+	font-size: 40px;
+	border: none;
+	height: 300px;
+	width: 300px;
+	display: inline-block;
+	background-color: #C68E17;
+}
+
+#button-CV {
+	margin-left: 30px;
+}
+
+.home-buttons {
+	text-align: center;
+}
+
+/* Blogs */
+.back-button {
+	text-align: center;
+}
+
+.top-menu {
+	height: 50px;
+	width: 80px;
+	font-size: 20px;
+	color: black;
+	margin-top: 15px;
+}
+
+.page-content h3 a, .page-content h3 a:active, .page-content h3 a:hover, .page-content h3 a:visited:hover {
+	color: yellow;
+	font-weight: bold;
+	font-size: 30px;
+	margin-left: 20px;
+}
+
+.page-content h3 a:visited {
+	color: black;
+}
+
+.post {
+	display: inline-block;
+}
+
+#edit-post {
+	float: right;
+	margin-right: 70%;
+	margin-top: 20px;
+	color: black;
+}
+
+.sub-header h3 {
+	color: yellow;
+	font-weight: bold;
+	font-size: 30px;
+	margin-left: 20px;
+}
+
+.published {
+	color: grey;
+	margin-left: 20px;
+}
+
+.post-text {
+	margin-left: 20px;
+}
+
+#blog-button {
+	height: 30px;
+	margin-left: 20px;
+}
+
+.cv {
+	margin-left: 20px;
+}
+
+.indented {
+	margin-left: 30px;
+}
+
+.entry-add {
+	display: inline-block;
+}
+
+.cv-section {
+	display: inline-block;
+}
+
+#cv-2 h3 {
+	margin-top: 40px;
+}
+
+#cv-2 {
+	margin-left: 30%;
+}
+
+#cv-1 {
+	margin-left: 10%
+}
